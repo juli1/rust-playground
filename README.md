@@ -7,15 +7,15 @@ what we know in this new paradigm.
 
 
 ## Traits
-The file [src/animals.rs](blob/master/src/animals.rs)
+The file [src/animals.rs](src/animals.rs)
 shows a very basic example of how to define traits
 when defining a new structure Animals.
 
 ## Tree
-The file [src/tree.rs](blob/master/src/tree.rs) 
+The file [src/tree.rs](src/tree.rs) 
 is a quick implementation of a binary tree with rust.
 
 ## Threads
-The file [src/threads-unsafe.rs](blob/src/threads-unsafe.rs)
+The file [src/threads-unsafe.rs](src/threads-unsafe.rs)
 is a use of threads with unsafe operations (use of a global 
 variable being modified).
