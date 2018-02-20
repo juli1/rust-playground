@@ -1,4 +1,4 @@
-# rust-playground
+# Rust Playground: data structure, algorithms, threads, etc.
 
 This repository shows some examples of rust code for common coding
 problems. As rust is different from other programming languages,
@@ -24,9 +24,20 @@ The file [src/animals.rs](src/animals.rs)
 shows a very basic example of how to define traits
 when defining a new structure Animals.
 
-### Tree
+
+### Data Structure
+
+#### LinkedList
+
+The file [src/listnode.rs](src/listnode.rs) 
+is a quick implementation of a linkedlist with rust.
+The ListNode struct is used in [src/main.rs](src/main.rs) 
+
+
+#### Binary Tree
 The file [src/tree.rs](src/tree.rs) 
 is a quick implementation of a binary tree with rust.
+The TreeNode struct is used in [src/main.rs](src/main.rs) 
 
 ### Threads
 
