@@ -1,0 +1,26 @@
+[package]
+name = "rust-playground"
+version = "0.1.0"
+authors = ["Julien Delange <julien@gunnm.org>"]
+
+[[bin]]
+name = "animals"
+path = "src/animals.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "threads-unsafe"
+path = "src/threads-unsafe.rs"
+
+[[bin]]
+name = "threads-channel"
+path = "src/threads-channel.rs"
+
+[[bin]]
+name = "threads-rwlock"
+path = "src/threads-rwlock.rs"
+
+[dependencies]
