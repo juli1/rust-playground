@@ -6,7 +6,6 @@ pub struct ListNode<T> {
     value : T
 }
 
-
 impl<T> ListNode<T> where T: Clone{
     pub fn new (v : T) -> ListNode<T> {
         ListNode {next : None, value : v}
@@ -28,6 +27,22 @@ impl<T> ListNode<T> where T: Clone{
             }
         }
     }
+
+    pub fn reverse(&self) -> ListNode<T> {
+        let mut current = self;
+        let mut result : ListNode<T>;
+        result = ListNode::new(current.value.clone());
+        loop {
+            match current.next {
+                Some(ref v) => current = v,
+                None => return result,
+            }
+            let mut tmp = result;
+            result = ListNode::new(current.value.clone());
+            result.set_next(tmp);
+        }
+        return result;
+    }
 }
 
 #[test]
@@ -42,5 +57,16 @@ fn listnode_len() {
     root.set_next(ListNode::new(51));
     assert_eq!(root.len(), 2);
 }
+
+#[test]
+fn listnode_reverse() {
+    let mut root = ListNode::new(42);
+    root.set_next(ListNode::new(51));
+    let mut reverse = root.reverse();
+    assert_eq!(reverse.len(), 2);
+    assert_eq!(reverse.value , 51);
+    assert_eq!(reverse.next.unwrap().value , 42);
+}
+
 
 
