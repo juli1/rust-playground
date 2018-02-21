@@ -1,5 +1,6 @@
 
 use std;
+use std::fmt;
 
 /// This class shows how to implement a binary
 /// tree using Rust.
@@ -36,22 +37,27 @@ impl<T> TreeNode<T> where T: std::fmt::Debug {
         self.left = Some(Box::new(TreeNode::new(val)));
         return self
     }
+}
 
-    pub fn print_tree(&self) {
+
+impl<T> fmt::Display for TreeNode<T> where T : fmt::Display {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self.left {
-            None => println!(""),
-            Some(ref v) => (*v).print_tree(),
+            None => (),
+            Some(ref v) => write!(f, "{}", *v).expect("ok"),
         }
 
-        println!(" {:?} ",  self.value);
+        write!(f, "{},",  self.value).expect("ok");
 
         match self.right {
-            None => println!(""),
-            Some(ref v) => (*v).print_tree(),
+            None => (),
+            Some(ref v) => (*v).fmt(f).expect("ok"),
         }
 
+        return Ok(())
     }
 }
+
 
 #[test]
 fn create_tree() {
@@ -64,18 +70,15 @@ fn create_tree() {
     if let Some(v) = root.left {
         assert_eq!(v.value, 3);
     }
-    else
-    {
+    else {
         assert!(false);
     }
 
     if let Some(v) = root.right {
         assert_eq!(v.value, 6);
     }
-    else
-    {
+    else {
         assert!(false);
     }
-
 }
 

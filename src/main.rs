@@ -11,18 +11,17 @@ fn main() {
     let mut root = TreeNode::new(5);
     root.set_left(4);
     root.set_right(42);
-    println!("Hello {:?}", root);
-    root.print_tree();
+    println!("Tree={}", root);
 
     let mut node1 = ListNode::new(0);
     let mut node2 = ListNode::new(1);
     let node3 = ListNode::new(3);
     node2.set_next(node3);
     node1.set_next(node2);
-    println!("{:?}", node1);
-    println!("size = {:?}", node1.len());
+    println!("linkedlist = {}", node1);
+    println!("size = {}", node1.len());
     let reversed = node1.reverse();
-    println!("reverse = {:?}", reversed);
+    println!("reverse    = {}", reversed);
 
     let mut trie_root = TrieNode::new();
     trie_root.add_word("hello");

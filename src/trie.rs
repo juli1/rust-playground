@@ -39,7 +39,7 @@ impl TrieNode {
 
 #[test]
 fn create_trie() {
-    let mut root = TrieNode::new();
+    let root = TrieNode::new();
     assert!(!root.has_prefix("bla"));
 }
 

@@ -1,12 +1,13 @@
+use std::fmt;
 
 #[derive(Debug)]
 #[derive(Clone)]
-pub struct ListNode<T> {
+pub struct ListNode<T : fmt::Display> {
     pub next : Option<Box<ListNode<T>>>,
     value : T
 }
 
-impl<T> ListNode<T> where T: Clone{
+impl<T> ListNode<T> where T: Clone + fmt::Display{
     pub fn new (v : T) -> ListNode<T> {
         ListNode {next : None, value : v}
     }
@@ -44,9 +45,22 @@ impl<T> ListNode<T> where T: Clone{
     }
 }
 
+impl<T> fmt::Display for ListNode<T> where T : fmt::Display {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let mut head = self;
+        loop {
+            write!(f, "{} ", head.value).expect("success");
+            match head.next {
+                Some(ref v) => head = v,
+                None => return writeln!(f, "")
+            }
+        }
+    }
+}
+
 #[test]
 fn listnode_create() {
-    let mut root = ListNode::new(42);
+    let root = ListNode::new(42);
     assert_eq!(root.value, 42);
 }
 
@@ -61,11 +75,9 @@ fn listnode_len() {
 fn listnode_reverse() {
     let mut root = ListNode::new(42);
     root.set_next(ListNode::new(51));
-    let mut reverse = root.reverse();
+    let reverse = root.reverse();
     assert_eq!(reverse.len(), 2);
     assert_eq!(reverse.value , 51);
     assert_eq!(reverse.next.unwrap().value , 42);
 }
-
-
 
