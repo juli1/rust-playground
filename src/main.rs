@@ -20,6 +20,7 @@ fn main() {
     node2.set_next(node3);
     node1.set_next(node2);
     println!("{:?}", node1);
+    println!("size = {:?}", node1.len());
 
     let mut trie_root = TrieNode::new();
     trie_root.add_word("hello");
