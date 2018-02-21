@@ -6,7 +6,7 @@ pub struct ListNode<T> {
     value : T
 }
 
-impl<T> ListNode<T> {
+impl<T> ListNode<T> where T: Clone{
     pub fn new (v : T) -> ListNode<T> {
         ListNode {next : None, value : v}
     }
@@ -14,12 +14,4 @@ impl<T> ListNode<T> {
     pub fn set_next(&mut self, n : ListNode<T>) {
         self.next = Some(Box::new(n));
     }
-
-    /*
-    pub fn reverse(&self) -> &ListNode<T> {
-        let dummy = self;
-
-        return dummy
-    }
-    */
 }

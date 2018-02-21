@@ -1,8 +1,10 @@
 mod tree;
 mod listnode;
+mod trie;
 
 use tree::TreeNode;
 use listnode::ListNode;
+use trie::TrieNode;
 
 fn main() {
     println!("Hello, world!");
@@ -19,8 +21,9 @@ fn main() {
     node1.set_next(node2);
     println!("{:?}", node1);
 
-    // let reverse = node1.reverse();
-
-    // println!("{:?}", reverse);
+    let mut trie_root = TrieNode::new();
+    trie_root.add_word("hello");
+    println!("has hel? {:?}", trie_root.has_prefix("hel"));
+    println!("has bla? {:?}", trie_root.has_prefix("bla"));
 
 }

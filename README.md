@@ -39,6 +39,11 @@ The file [src/tree.rs](src/tree.rs)
 is a quick implementation of a binary tree with rust.
 The TreeNode struct is used in [src/main.rs](src/main.rs) 
 
+#### Trie
+The file [src/trie.rs](src/trie.rs) is an implementation
+of a trie in Rust. The TrieNode struct is used
+in [src/main.rs](src/main.rs) to insert or search for words.
+
 ### Threads
 
 #### Unsafe thread, communication through global variables
