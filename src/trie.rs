@@ -36,3 +36,31 @@ impl TrieNode {
         return true
     }
 }
+
+#[test]
+fn create_trie() {
+    let mut root = TrieNode::new();
+    assert!(!root.has_prefix("bla"));
+}
+
+#[test]
+fn insert_word() {
+    let mut root = TrieNode::new();
+    root.add_word("hello world");
+    assert!(root.has_prefix("hello"));
+}
+
+
+#[test]
+fn search_word() {
+    let mut root = TrieNode::new();
+    root.add_word("hello world");
+    assert!(root.has_prefix("hello"));
+    assert!(!root.has_prefix("goodbye"));
+    root.add_word("hah!");
+    assert!(root.has_prefix("hello"));
+    assert!(root.has_prefix("hah"));
+}
+
+
+
