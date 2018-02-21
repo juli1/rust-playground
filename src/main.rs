@@ -16,7 +16,7 @@ fn main() {
 
     let mut node1 = ListNode::new(0);
     let mut node2 = ListNode::new(1);
-    let mut node3 = ListNode::new(3);
+    let node3 = ListNode::new(3);
     node2.set_next(node3);
     node1.set_next(node2);
     println!("{:?}", node1);

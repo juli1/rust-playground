@@ -22,7 +22,6 @@ fn sender (s : &mpsc::Sender<u32>) {
 }
 
 fn main() {
-    /// Create the communication channel.
     let (tx, rx) = mpsc::channel();
 
     let sender_thread = thread::spawn( move || { sender(&tx);});

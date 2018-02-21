@@ -37,11 +37,10 @@ impl<T> ListNode<T> where T: Clone{
                 Some(ref v) => current = v,
                 None => return result,
             }
-            let mut tmp = result;
+            let tmp = result;
             result = ListNode::new(current.value.clone());
             result.set_next(tmp);
         }
-        return result;
     }
 }
 

@@ -1,14 +1,14 @@
 use std::thread;
 use std::time;
 
-static mut glob : u32 = 0;
+static mut GLOBVAR : u32 = 0;
 
 fn handler () {
     let thousands_ms = time::Duration::from_millis(1000);
     for i in 0 .. 10 {
         unsafe {
-            println!("hello {:?}, global={:?}", i, glob);
-            glob = glob + 1;
+            println!("hello {:?}, global={:?}", i, GLOBVAR);
+            GLOBVAR = GLOBVAR + 1;
         }
         thread::sleep(thousands_ms);
     }
