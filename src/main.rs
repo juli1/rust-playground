@@ -22,6 +22,9 @@ fn main() {
     println!("size = {}", node1.len());
     let reversed = node1.reverse();
     println!("reverse    = {}", reversed);
+    for n in reversed.iter() {
+        println!("n={:?}",n);
+    }
 
     let mut trie_root = TrieNode::new();
     trie_root.add_word("hello");

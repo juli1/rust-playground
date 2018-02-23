@@ -7,7 +7,35 @@ pub struct ListNode<T : fmt::Display> {
     value : T
 }
 
+pub struct ListNodeIterator<'a, T: 'a + fmt::Display>{
+    reference : &'a ListNode<T>
+}
+
+
+impl<'a, T> Iterator for ListNodeIterator<'a, T> where T : Clone + fmt::Display{
+    type Item = T;
+
+    fn next(&mut self) -> Option<T> {
+        match self.reference.next {
+            None => return None,
+            Some(ref v) => self.reference = v,
+
+        }
+
+        return Some(self.reference.value.clone())
+    }
+}
+
+
+
 impl<T> ListNode<T> where T: Clone + fmt::Display{
+
+    pub fn iter<'a> (&'a self) -> ListNodeIterator<'a,T> {
+        ListNodeIterator {
+            reference : self
+        }
+    }
+
     pub fn new (v : T) -> ListNode<T> {
         ListNode {next : None, value : v}
     }
