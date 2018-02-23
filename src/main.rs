@@ -22,6 +22,7 @@ fn main() {
     println!("size = {}", node1.len());
     let reversed = node1.reverse();
     println!("reverse    = {}", reversed);
+    println!("testing listnode iterator");
     for n in reversed.iter() {
         println!("n={:?}",n);
     }
