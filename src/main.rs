@@ -29,7 +29,9 @@ fn main() {
 
     let mut trie_root = TrieNode::new();
     trie_root.add_word("hello");
-    println!("has hel? {:?}", trie_root.has_prefix("hel"));
-    println!("has bla? {:?}", trie_root.has_prefix("bla"));
+    println!("has prefix hel? {:?}", trie_root.has_prefix("hel"));
+    println!("has prefix bla? {:?}", trie_root.has_prefix("bla"));
+    println!("has word hel? {:?}", trie_root.has_word("hel"));
+    println!("has word hello {:?}", trie_root.has_word("hello"));
 
 }

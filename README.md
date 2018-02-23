@@ -33,6 +33,9 @@ The file [src/listnode.rs](src/listnode.rs)
 is a quick implementation of a linkedlist with rust.
 The ListNode struct is used in [src/main.rs](src/main.rs) 
 
+Note that this implementation also implements:
+ * An iterator so that you can play like ```for v in node.iter() { println!("{}", n```
+ * The Display trait to display a listnode and other next nodes
 
 #### Binary Tree
 The file [src/tree.rs](src/tree.rs) 
