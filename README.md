@@ -64,3 +64,7 @@ is a use of threads with channels.
 The file [src/threads-rwlock.rs](src/threads-rwlock.rs)
 is an example of use of rwlock between multiple readers
 and one writer.
+
+# Useful resources
+ * [Little tour of multiple iterators](https://blog.guillaume-gomez.fr/articles/2017-03-09+Little+tour+of+multiple+iterators+implementation+in+Rust)
+ * [Basic Trie Implementation](https://users.rust-lang.org/t/implementing-a-very-basic-trie/10788/2)

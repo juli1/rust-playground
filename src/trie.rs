@@ -9,13 +9,19 @@ pub struct TrieNode {
     fn moving<T>(t: T) -> T { t }
 
 impl TrieNode {
+
+    /// Instantiate the root node of your trie
+    /// Just start it like this:
+    /// ```
+    /// let trie = TrieNode::new();
+    /// ```
     pub fn new() -> TrieNode {
         TrieNode {map : HashMap::new(), ending : false}
     }
 
     /// Insert a word in the Trie
-    /// More information about this code here: 
-    /// https://users.rust-lang.org/t/implementing-a-very-basic-trie/10788/2
+    /// More information about this code on this
+    /// [blog post](https://users.rust-lang.org/t/implementing-a-very-basic-trie/10788/2)
     pub fn add_word(&mut self, word : &str) {
         let mut current : &mut TrieNode = self;
         for c in word.chars() {
@@ -85,6 +91,5 @@ fn search_word() {
     assert!(root.has_prefix("hello world"));
     assert!(root.has_word("hah"));
 }
-
 
 
