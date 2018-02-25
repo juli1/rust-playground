@@ -23,4 +23,10 @@ path = "src/threads-channel.rs"
 name = "threads-rwlock"
 path = "src/threads-rwlock.rs"
 
+[[bin]]
+name = "mime-guess"
+path = "src/mime-guess.rs"
+
+
 [dependencies]
+mime = "0.3.5"
