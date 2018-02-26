@@ -26,4 +26,10 @@ fn main () {
 
     let mimetype = find_mimetype(&filename);
     println!("mimetype for filename {:?}: {:?}", filename, mimetype);
+    let filenames = vec!("foobar.jpg", "foo.bar", "foobar.png");
+    for file in filenames {
+	    let mime = find_mimetype(&file.to_owned());
+	 	println!("MIME for {:?}: {:?}", file, mime);
+	 }
+
 }

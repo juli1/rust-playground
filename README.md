@@ -78,6 +78,12 @@ The file [src/threads-rwlock.rs](src/threads-rwlock.rs)
 is an example of use of rwlock between multiple readers
 and one writer.
 
+
+#### Thread with conditional variable
+The file [src/threads-condvar.rs](src/threads-condvar.rs) shows
+how to use a conditional variable with Rust. It spins 6 threads
+and synchronize their start using a conditional variable.
+
 # Crates being used/tested
 
 ## Mime guess

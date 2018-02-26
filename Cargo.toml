@@ -24,6 +24,10 @@ name = "threads-rwlock"
 path = "src/threads-rwlock.rs"
 
 [[bin]]
+name = "threads-condvar"
+path = "src/threads-condvar.rs"
+
+[[bin]]
 name = "mime-guess"
 path = "src/mime-guess.rs"
 
